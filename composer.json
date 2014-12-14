@@ -1,0 +1,22 @@
+{
+    "name": "shareworks/mandrill-bundle",
+    "description": "Mandrill API integration for Symfony framework",
+    "license": "MIT",
+    "require": {
+        "symfony/framework-bundle": "~2.3",
+        "jms/serializer-bundle": "~0.13.0",
+        "shareworks/mandrill": "~0.1"
+    },
+    "authors": [
+        {
+            "name": "Raymond Jelierse",
+            "email": "raymond@shareworks.nl"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Shareworks\\Bundle\\MandrillBundle\\": ""
+        }
+    }
+}

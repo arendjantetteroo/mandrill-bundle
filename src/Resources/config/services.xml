@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <!-- API wrapper -->
+        <service id="mandrill" class="Shareworks\Component\Mandrill\Mandrill">
+            <argument type="service" id="jms_serializer.serializer" />
+            <argument type="collection">
+                <argument key="token">%mandrill.token%</argument>
+            </argument>
+        </service>
+
+        <!-- Message dispatcher -->
+        <service id="mandrill.messages" class="Shareworks\Component\Mandrill\Email\Dispatcher">
+            <argument type="service" id="mandrill" />
+        </service>
+
+        <!-- Webhook manager -->
+        <service id="mandrill.webhooks" class="Shareworks\Component\Mandrill\Webhook\Manager">
+            <argument type="service" id="mandrill" />
+        </service>
+
+        <!-- Event dispatcher -->
+        <service id="mandrill.event_dispatcher" class="Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher">
+            <argument type="service" id="service_container" />
+        </service>
+    </services>
+</container>
