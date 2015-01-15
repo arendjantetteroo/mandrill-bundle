@@ -48,7 +48,7 @@ class RegisterWebhookCommand extends ContainerAwareCommand
             $output->writeln(sprintf('Listening to the following events: <comment>%s</comment>', implode('</comment>, <comment>', $events)));
         }
 
-        $webhook = $this->registerWebook($url, $description, $events);
+        $webhook = $this->registerWebhook($url, $description, $events);
         $output->writeln(sprintf('Webhook registered with id <info>%d</info>', $webhook->getId()));
     }
 
@@ -73,7 +73,7 @@ class RegisterWebhookCommand extends ContainerAwareCommand
      *
      * @return Webhook
      */
-    private function registerWebook($url, $description, array $events)
+    private function registerWebhook($url, $description, array $events)
     {
         return $this->getContainer()
             ->get('mandrill.webhooks')
