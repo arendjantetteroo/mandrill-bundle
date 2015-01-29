@@ -3,7 +3,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
 
-    <route id="mandrill_webhook" methods="POST" path="/mandrill/hook">
+    <route id="mandrill_webhook" methods="HEAD,POST" path="/mandrill/hook">
         <default key="_controller">ShareworksMandrillBundle:Webhook:incoming</default>
     </route>
 
