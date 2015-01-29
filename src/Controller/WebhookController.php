@@ -46,7 +46,7 @@ class WebhookController extends Controller
     private function getEventsFromRequest(Request $request)
     {
         $events = $request->request->get('mandrill_events', '[]');
-        $events = $this->get('jms_serializer.serializer')->deserialize($events, 'Shareworks\Component\Mandrill\Event\AbstractEvent', 'json');
+        $events = $this->get('jms_serializer')->deserialize($events, 'Shareworks\Bundle\MandrillBundle\EventDispatcher\AbstractEvent', 'json');
 
         return $events;
     }
