@@ -16,7 +16,7 @@
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "Shareworks\\Bundle\\MandrillBundle\\": ""
+            "Shareworks\\Bundle\\MandrillBundle\\": "src"
         }
     }
 }
