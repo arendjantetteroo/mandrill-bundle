@@ -10,7 +10,7 @@ You can install this bundle using [Composer](https://getcomposer.org):
 $ composer require shareworks/mandrill-bundle
 ```
 
-Add the bundle to the `app/AppKernel.php` file:
+Add the bundle and JMSSerializerBundle to the `app/AppKernel.php` file:
 
 ```php
 class AppKernel extends Kernel
@@ -18,6 +18,7 @@ class AppKernel extends Kernel
     public function registerBundles()
     {
         $bundles = array(
+            new JMS\SerializerBundle\JMSSerializerBundle(),
             new Shareworks\Bundle\MandrillBundle\ShareworksMandrillBundle(),
         );
         
